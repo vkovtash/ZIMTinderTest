@@ -91,7 +91,8 @@ static void stopRadarAnimationInView(UIView *view) {
 }
 
 - (void)addRadarLayerToView:(UIView *)view offsetFraction:(CGFloat)offsetFraction {
-    CGRect rect = view.bounds;
+    //Layer borders should be inside rect
+    CGRect rect = CGRectInset(view.bounds, self.lineWidth / 2, self.lineWidth / 2);
     
     CAShapeLayer *radarLayer = [self newShapeLayer];
     radarLayer.bounds = rect;
