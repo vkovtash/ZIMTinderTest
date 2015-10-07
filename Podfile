@@ -3,9 +3,9 @@
 
 target 'ZIMTinderTest' do
 pod 'FBSDKLoginKit', '~> 4.6'
+pod 'MBProgressHUD', '~> 0.9.1'
 end
 
 target 'ZIMTinderTestTests' do
 
 end
-

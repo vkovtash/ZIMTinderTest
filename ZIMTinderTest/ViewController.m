@@ -11,6 +11,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ZIMRadarAnimation.h"
 #import "UIView+ZIMHideAnimated.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 @interface ViewController () <FBSDKLoginButtonDelegate>
@@ -18,9 +19,6 @@
 @end
 
 @implementation ViewController
-
-- (void)awakeFromNib {
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,13 +66,37 @@
 #pragma mark - FBSDKLoginButtonDelegate
 
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
-    if (!error && result.token) {
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:self.view];
+    if (result && !result.isCancelled) {
+        [hud hide:YES];
         [self showProfilePictureAnimated:YES];
+        return;
     }
+    
+    if (result && result.isCancelled) {
+        hud.labelText = @"Cancelled";
+    }
+    else {
+        hud.labelText = @"Error";
+    }
+    
+    hud.mode = MBProgressHUDModeText;
+    [hud hide:YES afterDelay:1.];
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
     [self hideProfilePictureAnimated:YES];
+}
+
+- (BOOL)loginButtonWillLogin:(FBSDKLoginButton *)loginButton {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        return YES;
+    }
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Logging in";
+    hud.square = YES;
+    return YES;
 }
 
 @end
