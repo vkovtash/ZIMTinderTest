@@ -8,15 +8,10 @@
 
 #import "ViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ZIMRadarAnimation.h"
 #import "UIView+ZIMHideAnimated.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-
-@interface ViewController () <FBSDKLoginButtonDelegate>
-
-@end
 
 @implementation ViewController
 
@@ -27,19 +22,18 @@
     self.facebookButton.readPermissions = @[@"public_profile"];
     self.facebookButton.delegate = self;
     self.facebookButton.loginBehavior = FBSDKLoginBehaviorSystemAccount;
-    
-    
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [self showProfilePictureAnimated:NO];
-    }
-    else {
-        [self hideProfilePictureAnimated:NO];
-    }
+    self.radarContainerView.hidden = YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.radarContainerView zim_startRadarAnimation];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (self.isLoggedIn) {
+        [self showProfilePictureAnimated:animated];
+    }
+    else {
+        [self hideProfilePictureAnimated:animated];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -49,6 +43,12 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Public interface
+
+- (BOOL)isLoggedIn {
+    return [FBSDKAccessToken currentAccessToken] != nil;
 }
 
 - (void)showProfilePictureAnimated:(BOOL)animated {
@@ -89,7 +89,7 @@
 }
 
 - (BOOL)loginButtonWillLogin:(FBSDKLoginButton *)loginButton {
-    if ([FBSDKAccessToken currentAccessToken]) {
+    if (self.isLoggedIn) {
         return YES;
     }
     
