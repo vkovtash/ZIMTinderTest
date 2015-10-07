@@ -106,9 +106,8 @@ static void stopRadarAnimationInView(UIView *view) {
     group.duration = self.duration;
     group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     group.repeatCount = CGFLOAT_MAX;
-    group.timeOffset = self.duration * offsetFraction;
     group.animations = @[pathAnimation, opacityAnimation];
-    
+    group.beginTime = CACurrentMediaTime() + self.duration * offsetFraction;
     [radarLayer addAnimation:group forKey:ZIMRadarAnimationKey];
 }
 
