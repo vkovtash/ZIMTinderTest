@@ -15,7 +15,6 @@
 		F334E0781BC305B3007ACA0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F334E0771BC305B3007ACA0C /* Assets.xcassets */; };
 		F334E07B1BC305B3007ACA0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F334E0791BC305B3007ACA0C /* LaunchScreen.storyboard */; };
 		F334E0861BC305B3007ACA0C /* ZIMTinderTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0851BC305B3007ACA0C /* ZIMTinderTestTests.m */; };
-		F334E0921BC30601007ACA0C /* ZIMRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0911BC30601007ACA0C /* ZIMRadarView.m */; settings = {ASSET_TAGS = (); }; };
 		F334E0951BC31ED9007ACA0C /* ZIMRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -46,8 +45,6 @@
 		F334E0811BC305B3007ACA0C /* ZIMTinderTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZIMTinderTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F334E0851BC305B3007ACA0C /* ZIMTinderTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZIMTinderTestTests.m; sourceTree = "<group>"; };
 		F334E0871BC305B3007ACA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F334E0901BC30601007ACA0C /* ZIMRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMRadarView.h; sourceTree = "<group>"; };
-		F334E0911BC30601007ACA0C /* ZIMRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIMRadarView.m; sourceTree = "<group>"; };
 		F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMRadarAnimation.h; sourceTree = "<group>"; };
 		F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIMRadarAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,8 +117,6 @@
 				F334E0791BC305B3007ACA0C /* LaunchScreen.storyboard */,
 				F334E07C1BC305B3007ACA0C /* Info.plist */,
 				F334E06B1BC305B3007ACA0C /* Supporting Files */,
-				F334E0901BC30601007ACA0C /* ZIMRadarView.h */,
-				F334E0911BC30601007ACA0C /* ZIMRadarView.m */,
 				F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */,
 				F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */,
 			);
@@ -283,7 +278,6 @@
 			files = (
 				F334E0731BC305B3007ACA0C /* ViewController.m in Sources */,
 				F334E0701BC305B3007ACA0C /* AppDelegate.m in Sources */,
-				F334E0921BC30601007ACA0C /* ZIMRadarView.m in Sources */,
 				F334E0951BC31ED9007ACA0C /* ZIMRadarAnimation.m in Sources */,
 				F334E06D1BC305B3007ACA0C /* main.m in Sources */,
 			);
