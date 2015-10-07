@@ -8,6 +8,8 @@
 
 #import "UIView+ZIMHideAnimated.h"
 
+static const NSTimeInterval ZIMViewAnimationDuration = 0.3;
+
 @implementation UIView (ZIMHideAnimated)
 
 - (void)zim_setHidden:(BOOL)isHidded animated:(BOOL)animated completion:(void(^)(BOOL finished))completion {
@@ -31,7 +33,7 @@
     
     if (animated) {
         self.alpha = 0.;
-        [UIView animateWithDuration:0.25 animations:animationBlock completion:completion];
+        [UIView animateWithDuration:ZIMViewAnimationDuration animations:animationBlock completion:completion];
     }
     else {
         animationBlock();
@@ -55,7 +57,7 @@
     };
     
     if (animated) {
-        [UIView animateWithDuration:0.25 animations:animationBlock completion:animationCompletionBlock];
+        [UIView animateWithDuration:ZIMViewAnimationDuration animations:animationBlock completion:animationCompletionBlock];
     }
     else {
         animationBlock();
