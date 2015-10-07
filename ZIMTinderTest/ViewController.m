@@ -7,21 +7,49 @@
 //
 
 #import "ViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ZIMRadarAnimation.h"
 
-@interface ViewController ()
-
+@interface ViewController () <FBSDKLoginButtonDelegate>
+@property (strong, nonatomic) FBSDKProfilePictureView *currentProfilePictureView;
 @end
 
 @implementation ViewController
 
+- (void)awakeFromNib {
+    self.profilePictureView.pictureMode = FBSDKProfilePictureModeSquare;
+    self.facebookButton.readPermissions = @[@"public_profile"];
+    self.facebookButton.delegate = self;
+    self.facebookButton.loginBehavior = FBSDKLoginBehaviorSystemAccount;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.radarContainerView zim_startRadarAnimation];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.radarContainerView zim_stopRadarAnimation];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - FBSDKLoginButtonDelegate
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    
 }
 
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FBSDKProfilePictureView;
+@class FBSDKLoginButton;
+
 @interface ViewController : UIViewController
-
-
+@property (strong, nonatomic) IBOutlet UIView *radarContainerView;
+@property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profilePictureView;
+@property (strong, nonatomic) IBOutlet FBSDKLoginButton *facebookButton;
 @end
