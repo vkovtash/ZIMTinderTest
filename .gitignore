@@ -20,7 +20,7 @@ DerivedData
 *.xccheckout
 
 #CocoaPods
-#Pods
+Pods
 
 #OCLint
 compile_commands.json
