@@ -23,16 +23,29 @@
     self.facebookButton.delegate = self;
     self.facebookButton.loginBehavior = FBSDKLoginBehaviorSystemAccount;
     self.radarContainerView.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(startRadarAnimation)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (self.isLoggedIn) {
+    if (!self.isLoggedIn) {
+        [self hideProfilePictureAnimated:animated];
+        return;
+    }
+    
+    if (self.radarContainerView.isHidden) {
         [self showProfilePictureAnimated:animated];
     }
     else {
-        [self hideProfilePictureAnimated:animated];
+        [self.radarContainerView zim_startRadarAnimation];
     }
 }
 
@@ -43,6 +56,12 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)startRadarAnimation {
+    if (!self.radarContainerView.isHidden && self.isViewLoaded && self.view.window) {
+        [self.radarContainerView zim_startRadarAnimation];
+    }
 }
 
 #pragma mark - Public interface
