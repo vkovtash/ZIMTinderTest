@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIr-Sw-QI7" userLabel="RadarView">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-6V-olE" customClass="FBSDKProfilePictureView">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="75"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eIp-6V-olE" firstAttribute="top" secondItem="fIr-Sw-QI7" secondAttribute="top" id="BjC-Wf-XlP"/>
+                                    <constraint firstItem="eIp-6V-olE" firstAttribute="leading" secondItem="fIr-Sw-QI7" secondAttribute="leading" id="GhY-X9-8x1"/>
+                                    <constraint firstAttribute="width" constant="150" id="H54-LG-0fR"/>
+                                    <constraint firstAttribute="width" secondItem="fIr-Sw-QI7" secondAttribute="height" multiplier="1:1" id="OAZ-3j-cPz"/>
+                                    <constraint firstAttribute="trailing" secondItem="eIp-6V-olE" secondAttribute="trailing" id="fpA-Oy-98T"/>
+                                    <constraint firstAttribute="bottom" secondItem="eIp-6V-olE" secondAttribute="bottom" id="gEA-l4-85W"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIx-gq-5lE" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="237" y="550" width="126" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gw5-Hx-5MR"/>
+                                    <constraint firstAttribute="width" constant="126" id="vWS-uH-hDk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QIx-gq-5lE" secondAttribute="bottom" constant="20" id="4jV-LM-fCG"/>
+                            <constraint firstItem="QIx-gq-5lE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="65p-uu-92k"/>
+                            <constraint firstItem="fIr-Sw-QI7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MEx-ot-8Jc"/>
+                            <constraint firstItem="fIr-Sw-QI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y5E-i4-4t3"/>
+                            <constraint firstItem="QIx-gq-5lE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1d-yH-KfX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="65p-uu-92k"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="facebookButton" destination="QIx-gq-5lE" id="Ivp-iO-QLL"/>
+                        <outlet property="profilePictureView" destination="eIp-6V-olE" id="Z6Y-I0-Zf3"/>
+                        <outlet property="radarContainerView" destination="fIr-Sw-QI7" id="fmM-1o-iA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="378"/>
+        </scene>
+    </scenes>
+</document>
