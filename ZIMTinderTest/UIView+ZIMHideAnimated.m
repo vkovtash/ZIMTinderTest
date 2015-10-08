@@ -8,7 +8,11 @@
 
 #import "UIView+ZIMHideAnimated.h"
 
-static const NSTimeInterval ZIMViewAnimationDuration = 0.3;
+
+static const NSTimeInterval ZIMViewAnimationDuration = 0.5;
+static NSString *const ZIMOpacityAnimationKey = @"ZIMOpacityAnimationKey";
+static NSString *const ZIMTransformAnimationKey = @"ZIMTransformAnimationKey";
+
 
 @implementation UIView (ZIMHideAnimated)
 
@@ -26,19 +30,37 @@ static const NSTimeInterval ZIMViewAnimationDuration = 0.3;
         return;
     }
     
-    void(^animationBlock)() = ^{
-        self.hidden = NO;
-        self.alpha = 1.;
-    };
+    self.hidden = NO;
     
-    if (animated) {
-        self.alpha = 0.;
-        [UIView animateWithDuration:ZIMViewAnimationDuration animations:animationBlock completion:completion];
-    }
-    else {
-        animationBlock();
+    if (!animated) {
         completion(YES);
+        return;
     }
+    
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        completion(YES);
+        [self.layer removeAnimationForKey:ZIMOpacityAnimationKey];
+        [self.layer removeAnimationForKey:ZIMTransformAnimationKey];
+    }];
+    
+    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    [CATransaction setAnimationDuration:ZIMViewAnimationDuration];
+    
+    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacityAnimation.fromValue = @(0);
+    opacityAnimation.toValue = @(1);
+    opacityAnimation.removedOnCompletion = NO;
+    
+    CABasicAnimation *transformAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    transformAnimation.fromValue = [NSValue valueWithCATransform3D:CATransform3DScale(CATransform3DIdentity, 0, 0, 1.0)];
+    transformAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    transformAnimation.removedOnCompletion = NO;
+    transformAnimation.fillMode = kCAFillModeForwards;
+    
+    [self.layer addAnimation:opacityAnimation forKey:ZIMOpacityAnimationKey];
+    [self.layer addAnimation:transformAnimation forKey:ZIMTransformAnimationKey];
+    [CATransaction commit];
 }
 
 - (void)zim_hideAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion {
@@ -46,23 +68,39 @@ static const NSTimeInterval ZIMViewAnimationDuration = 0.3;
         return;
     }
     
-    void(^animationBlock)() = ^{
-        self.alpha = 0.;
-    };
-    
     void (^animationCompletionBlock)(BOOL finished) = ^(BOOL finished) {
         self.hidden = YES;
-        self.alpha = 1.;
         completion(finished);
     };
     
-    if (animated) {
-        [UIView animateWithDuration:ZIMViewAnimationDuration animations:animationBlock completion:animationCompletionBlock];
-    }
-    else {
-        animationBlock();
+    if (!animated) {
         animationCompletionBlock(YES);
+        return;
     }
+    
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        animationCompletionBlock(YES);
+        [self.layer removeAnimationForKey:ZIMOpacityAnimationKey];
+        [self.layer removeAnimationForKey:ZIMTransformAnimationKey];
+    }];
+    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    [CATransaction setAnimationDuration:ZIMViewAnimationDuration];
+    
+    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacityAnimation.fromValue = @(1);
+    opacityAnimation.toValue = @(0);
+    opacityAnimation.removedOnCompletion = NO;
+    
+    CABasicAnimation *transformAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    transformAnimation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    transformAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DScale(CATransform3DIdentity, 0, 0, 1.0)];
+    transformAnimation.removedOnCompletion = NO;
+    transformAnimation.fillMode = kCAFillModeForwards;
+    
+    [self.layer addAnimation:opacityAnimation forKey:ZIMOpacityAnimationKey];
+    [self.layer addAnimation:transformAnimation forKey:ZIMTransformAnimationKey];
+    [CATransaction commit];
 }
 
 @end

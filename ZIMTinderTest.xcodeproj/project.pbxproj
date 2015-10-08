@@ -111,19 +111,19 @@
 		F334E06A1BC305B3007ACA0C /* ZIMTinderTest */ = {
 			isa = PBXGroup;
 			children = (
-				F334E06E1BC305B3007ACA0C /* AppDelegate.h */,
-				F334E06F1BC305B3007ACA0C /* AppDelegate.m */,
+				F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */,
+				F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */,
+				F329DD781BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.h */,
+				F329DD791BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m */,
 				F334E0711BC305B3007ACA0C /* ViewController.h */,
 				F334E0721BC305B3007ACA0C /* ViewController.m */,
+				F334E06E1BC305B3007ACA0C /* AppDelegate.h */,
+				F334E06F1BC305B3007ACA0C /* AppDelegate.m */,
 				F334E0741BC305B3007ACA0C /* Main.storyboard */,
 				F334E0771BC305B3007ACA0C /* Assets.xcassets */,
 				F334E0791BC305B3007ACA0C /* LaunchScreen.storyboard */,
 				F334E07C1BC305B3007ACA0C /* Info.plist */,
 				F334E06B1BC305B3007ACA0C /* Supporting Files */,
-				F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */,
-				F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */,
-				F329DD781BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.h */,
-				F329DD791BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m */,
 			);
 			path = ZIMTinderTest;
 			sourceTree = "<group>";
