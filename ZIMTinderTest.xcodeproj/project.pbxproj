@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37C6002C9A56436E64430EC5 /* libPods-ZIMTinderTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EF1312EF73CADD178AF53B /* libPods-ZIMTinderTest.a */; };
+		F329DD7A1BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = F329DD791BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m */; settings = {ASSET_TAGS = (); }; };
 		F334E06D1BC305B3007ACA0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E06C1BC305B3007ACA0C /* main.m */; };
 		F334E0701BC305B3007ACA0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E06F1BC305B3007ACA0C /* AppDelegate.m */; };
 		F334E0731BC305B3007ACA0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0721BC305B3007ACA0C /* ViewController.m */; };
@@ -14,7 +16,6 @@
 		F334E0781BC305B3007ACA0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F334E0771BC305B3007ACA0C /* Assets.xcassets */; };
 		F334E07B1BC305B3007ACA0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F334E0791BC305B3007ACA0C /* LaunchScreen.storyboard */; };
 		F334E0861BC305B3007ACA0C /* ZIMTinderTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0851BC305B3007ACA0C /* ZIMTinderTestTests.m */; };
-		F334E0921BC30601007ACA0C /* ZIMRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0911BC30601007ACA0C /* ZIMRadarView.m */; settings = {ASSET_TAGS = (); }; };
 		F334E0951BC31ED9007ACA0C /* ZIMRadarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9ACBAEF7ADD35F66A122A5A8 /* Pods-ZIMTinderTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZIMTinderTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZIMTinderTest/Pods-ZIMTinderTest.release.xcconfig"; sourceTree = "<group>"; };
+		C6EF1312EF73CADD178AF53B /* libPods-ZIMTinderTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZIMTinderTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A2B906EB3AD2792DF621A4 /* Pods-ZIMTinderTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZIMTinderTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZIMTinderTest/Pods-ZIMTinderTest.debug.xcconfig"; sourceTree = "<group>"; };
+		F329DD781BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZIMHideAnimated.h"; sourceTree = "<group>"; };
+		F329DD791BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZIMHideAnimated.m"; sourceTree = "<group>"; };
 		F334E0681BC305B3007ACA0C /* ZIMTinderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZIMTinderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F334E06C1BC305B3007ACA0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F334E06E1BC305B3007ACA0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,8 +48,6 @@
 		F334E0811BC305B3007ACA0C /* ZIMTinderTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZIMTinderTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F334E0851BC305B3007ACA0C /* ZIMTinderTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZIMTinderTestTests.m; sourceTree = "<group>"; };
 		F334E0871BC305B3007ACA0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F334E0901BC30601007ACA0C /* ZIMRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMRadarView.h; sourceTree = "<group>"; };
-		F334E0911BC30601007ACA0C /* ZIMRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIMRadarView.m; sourceTree = "<group>"; };
 		F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMRadarAnimation.h; sourceTree = "<group>"; };
 		F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIMRadarAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C6002C9A56436E64430EC5 /* libPods-ZIMTinderTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +71,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4626EABC4ED6C726CBB19678 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2B906EB3AD2792DF621A4 /* Pods-ZIMTinderTest.debug.xcconfig */,
+				9ACBAEF7ADD35F66A122A5A8 /* Pods-ZIMTinderTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B48BBFB88574182332D33BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6EF1312EF73CADD178AF53B /* libPods-ZIMTinderTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F334E05F1BC305B3007ACA0C = {
 			isa = PBXGroup;
 			children = (
 				F334E06A1BC305B3007ACA0C /* ZIMTinderTest */,
 				F334E0841BC305B3007ACA0C /* ZIMTinderTestTests */,
 				F334E0691BC305B3007ACA0C /* Products */,
+				4626EABC4ED6C726CBB19678 /* Pods */,
+				7B48BBFB88574182332D33BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,19 +111,19 @@
 		F334E06A1BC305B3007ACA0C /* ZIMTinderTest */ = {
 			isa = PBXGroup;
 			children = (
-				F334E06E1BC305B3007ACA0C /* AppDelegate.h */,
-				F334E06F1BC305B3007ACA0C /* AppDelegate.m */,
+				F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */,
+				F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */,
+				F329DD781BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.h */,
+				F329DD791BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m */,
 				F334E0711BC305B3007ACA0C /* ViewController.h */,
 				F334E0721BC305B3007ACA0C /* ViewController.m */,
+				F334E06E1BC305B3007ACA0C /* AppDelegate.h */,
+				F334E06F1BC305B3007ACA0C /* AppDelegate.m */,
 				F334E0741BC305B3007ACA0C /* Main.storyboard */,
 				F334E0771BC305B3007ACA0C /* Assets.xcassets */,
 				F334E0791BC305B3007ACA0C /* LaunchScreen.storyboard */,
 				F334E07C1BC305B3007ACA0C /* Info.plist */,
 				F334E06B1BC305B3007ACA0C /* Supporting Files */,
-				F334E0901BC30601007ACA0C /* ZIMRadarView.h */,
-				F334E0911BC30601007ACA0C /* ZIMRadarView.m */,
-				F334E0931BC31ED9007ACA0C /* ZIMRadarAnimation.h */,
-				F334E0941BC31ED9007ACA0C /* ZIMRadarAnimation.m */,
 			);
 			path = ZIMTinderTest;
 			sourceTree = "<group>";
@@ -128,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F334E08A1BC305B4007ACA0C /* Build configuration list for PBXNativeTarget "ZIMTinderTest" */;
 			buildPhases = (
+				3618B5CA9CDC9A64F2037C90 /* Check Pods Manifest.lock */,
 				F334E0641BC305B3007ACA0C /* Sources */,
 				F334E0651BC305B3007ACA0C /* Frameworks */,
 				F334E0661BC305B3007ACA0C /* Resources */,
+				2280DCA3E78EB3A11897BED4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +243,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2280DCA3E78EB3A11897BED4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZIMTinderTest/Pods-ZIMTinderTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3618B5CA9CDC9A64F2037C90 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F334E0641BC305B3007ACA0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,9 +283,9 @@
 			files = (
 				F334E0731BC305B3007ACA0C /* ViewController.m in Sources */,
 				F334E0701BC305B3007ACA0C /* AppDelegate.m in Sources */,
-				F334E0921BC30601007ACA0C /* ZIMRadarView.m in Sources */,
 				F334E0951BC31ED9007ACA0C /* ZIMRadarAnimation.m in Sources */,
 				F334E06D1BC305B3007ACA0C /* main.m in Sources */,
+				F329DD7A1BC5CA1A00AA89D2 /* UIView+ZIMHideAnimated.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +409,7 @@
 		};
 		F334E08B1BC305B4007ACA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A2B906EB3AD2792DF621A4 /* Pods-ZIMTinderTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZIMTinderTest/Info.plist;
@@ -361,6 +421,7 @@
 		};
 		F334E08C1BC305B4007ACA0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ACBAEF7ADD35F66A122A5A8 /* Pods-ZIMTinderTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZIMTinderTest/Info.plist;
@@ -413,6 +474,7 @@
 				F334E08C1BC305B4007ACA0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F334E08D1BC305B4007ACA0C /* Build configuration list for PBXNativeTarget "ZIMTinderTestTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +483,7 @@
 				F334E08F1BC305B4007ACA0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

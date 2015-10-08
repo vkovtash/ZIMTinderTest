@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface ViewController : UIViewController
+@class FBSDKProfilePictureView;
 
+@interface ViewController : UIViewController <FBSDKLoginButtonDelegate>
+@property (strong, nonatomic) IBOutlet UIView *radarContainerView;
+@property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profilePictureView;
+@property (strong, nonatomic) IBOutlet FBSDKLoginButton *facebookButton;
+@property (readonly, nonatomic) BOOL isLoggedIn;
 
+- (void)showProfilePictureAnimated:(BOOL)animated;
+- (void)hideProfilePictureAnimated:(BOOL)animated;
 @end

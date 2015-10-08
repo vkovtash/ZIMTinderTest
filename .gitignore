@@ -11,16 +11,12 @@
 !default.perspectivev3
 xcuserdata
 !default.perspectivev3
-*.xcworkspace
 profile
 *.moved-aside
 DerivedData
 .idea/
 *.hmap
 *.xccheckout
-
-#CocoaPods
-Pods
 
 #OCLint
 compile_commands.json
